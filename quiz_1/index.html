@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Questionnaire</title>
+
+  <!-- Chart.js CDN - Updated to latest version -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="quiz1.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Conceptualizing Leadership Questionnaire : Chapter 1</h1>
+    <p>
+      <strong>Purpose:</strong> To identify how you view leadership and to explore your
+      perceptions of different aspects of leadership.
+    </p>
+    <p>
+      <strong>Instructions:</strong> Using the scale below, indicate the extent to which you
+      agree or disagree with the following statements about leadership.
+    </p>
+    <p>
+      <strong>Key:</strong> 1 = Strongly disagree | 2 = Disagree | 3 = Neutral | 4 = Agree | 5 = Strongly agree
+    </p>
+
+    <form id="leadershipForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+
+  <div class="result" id="results" style="display: none;">
+    <h2>Your Leadership Dimension Scores</h2>
+    <div id="scores"></div>
+
+    <div class="chart-container">
+      <canvas id="radarChart"></canvas>
+    </div>
+
+    <div
+      id="interpretation"
+      style="
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 5px;
+      "
+    >
+      <h3>What Your Scores Mean</h3>
+      <p>
+        Your scores show how you view and define leadership. The way you think
+        about leadership affects how you practice it.
+      </p>
+
+      <div
+        id="highest-score"
+        style="
+          margin: 15px 0;
+          padding: 10px;
+          background-color: #e8f5e8;
+          border-left: 4px solid #28a745;
+        "
+      ></div>
+
+      <h4>Quick Guide to Each Leadership Dimension:</h4>
+      <ul style="line-height: 1.6;">
+        <li>
+          <strong>Trait:</strong> Leadership comes from special personality traits
+          and natural gifts
+        </li>
+        <li>
+          <strong>Ability:</strong> Leadership is a learned skill that can be
+          developed over time
+        </li>
+        <li>
+          <strong>Skill:</strong> Leadership requires specific knowledge,
+          competence, and know-how
+        </li>
+        <li>
+          <strong>Behavior:</strong> Leadership is about what people do and how
+          they act
+        </li>
+        <li>
+          <strong>Relationship:</strong> Leadership focuses on communication
+          between leaders and followers
+        </li>
+        <li>
+          <strong>Process:</strong> Leadership involves leaders, followers, and
+          situations working together
+        </li>
+      </ul>
+
+      <p>
+        <em
+          >Compare your scores to see which aspects of leadership matter most to
+          you. Your highest and lowest scores reveal your leadership
+          philosophy!</em
+        >
+      </p>
+    </div>
+  </div>
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="quiz1.js"></script>
+</body>
+</html>
