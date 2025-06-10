@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Skills Inventory</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="quiz3.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Leadership Skills Inventory</h1>
+    <p><strong>Purpose:</strong> The purpose of this questionnaire is to determine your leadership strengths and weaknesses.</p>
+    <p><strong>Instructions:</strong> Read each item carefully and decide whether the item describes you as a person. Indicate your response to each item by selecting one of the five options to the right of each item.</p>
+    <p><strong>Key:</strong> 1 = Not true | 2 = Seldom true | 3 = Occasionally true | 4 = Somewhat true | 5 = Very true</p>
+    <form id="skillsForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+    <div class="result" id="results" style="display: none;">
+      <h2>Your Leadership Skills Scores</h2>
+      <div id="scores"></div>
+      <div class="chart-container">
+        <canvas id="radarChart"></canvas>
+      </div>
+      
+      <div class="scoring-scale">
+        <h3>Scoring Scale</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High Range:</strong> 23-30 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color moderate"></div>
+            <p><strong>Moderate Range:</strong> 14-22 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low Range:</strong> 6-13 points</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="interpretation" style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 5px;"></div>
+    </div>
+  </div>
+  <script src="quiz3.js"></script>
+</body>
+</html>
