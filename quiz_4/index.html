@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Behavior Questionnaire</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <!-- For quadrant chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <link rel="stylesheet" href="quiz4.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Leadership Behavior Questionnaire</h1>
+    
+    <div class="intro">
+      <p>Researchers and practitioners alike have used many different instruments to assess the behaviors of leaders. The two most commonly used measures have been the <strong>LBDQ (Stogdill, 1963)</strong> and the <strong>Leadership Grid (Blake & McCanse, 1991)</strong>. Both of these measures provide information about the degree to which a leader acts task directed or people directed.</p>
+      <p><strong>Purpose:</strong> The purpose of this questionnaire is to assess your <strong>task </strong> and <strong> relationship </strong> orientations as a leader.</p>
+      <p><strong>Instructions:</strong> Read each item carefully and think about how often you engage in the described behavior. Indicate your response to each item by selecting one of the five options to the right of each item.</p>
+      <p><strong>Key:</strong> 1 = Never | 2 = Seldom | 3 = Occasionally | 4 = Often | 5 = Always</p>
+    </div>
+
+    <form id="leadershipForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+
+    <div class="result" id="results" style="display: none;">
+      <h2>Your Leadership Behavior Scores</h2>
+      <div id="scores"></div>
+      
+      <!-- Charts section with tabs for different visualizations -->
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="quadrant">Quadrant Chart</button>
+          <button class="chart-tab" data-chart="bar">Bar Chart</button>
+        </div>
+        
+        <div class="chart-views">
+          <div class="chart-view active" id="quadrant-view">
+            <h3>Leadership Style Quadrant</h3>
+            <div class="chart-container">
+              <canvas id="quadrantChart"></canvas>
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: rgba(72, 187, 120, 0.7);"></span>
+                <span>Your Score</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color" style="background-color: rgba(102, 126, 234, 0.7);"></span>
+                <span>Industry Leader Average</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-view" id="bar-view">
+            <h3>Task vs. Relationship Comparison</h3>
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scoring-scale">
+        <h3>Scoring Scale</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High Range:</strong> 40-50 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color moderate"></div>
+            <p><strong>Moderate Range:</strong> 30-39 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low Range:</strong> 10-29 points</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="interpretation" style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 5px;"></div>
+    </div>
+  </div>
+  <script src="quiz4.js"></script>
+</body>
+</html>
