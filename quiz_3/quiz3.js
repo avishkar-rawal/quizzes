@@ -137,7 +137,7 @@ function drawRadarChart(scores) {
           beginAtZero: true,
           min: 6,
           max: 30,
-          ticks: { stepSize: 6, display: true, color: '#4a5568', font: { size: 12, weight: '600' } },
+          ticks: { stepSize: 3, display: true, color: '#4a5568', font: { size: 12, weight: '600' } },
           grid: { display: true, color: 'rgba(102, 126, 234, 0.2)', lineWidth: 2 },
           angleLines: { display: true, color: 'rgba(102, 126, 234, 0.3)', lineWidth: 2 },
           pointLabels: { display: true, font: { size: 14, weight: 'bold' }, color: '#2d3748', padding: 10 }
