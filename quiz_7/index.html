@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LMX-7 Questionnaire</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="quiz7.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>LMX-7 Questionnaire</h1>
+    <div class="intro">
+      <p><strong>Purpose:</strong> To provide you with a fuller understanding of how LMX theory works.</p>
+      <p><strong>Instructions:</strong> For each item, indicate the degree to which you think the item is true for you by selecting one of the responses below.</p>
+      <p><strong>Key:</strong> 1 = Strongly Disagree | 2 = Disagree | 3 = Neutral | 4 = Agree | 5 = Strongly Agree</p>
+    </div>
+    <form id="lmxForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+    <div class="result" id="results" style="display: none;">
+      <h2>Your LMX-7 Score</h2>
+      <div id="scores"></div>
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="bar">Bar Chart</button>
+          <button class="chart-tab" data-chart="gauge">Gauge Chart</button>
+        </div>
+        <div class="chart-views">
+          <div class="chart-view active" id="bar-view">
+            <h3>LMX-7 Per-Question Scores</h3>
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-view" id="gauge-view">
+            <h3>Total LMX-7 Score</h3>
+            <div class="chart-container">
+              <canvas id="gaugeChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scoring-scale">
+        <h3>Scoring Scale</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High:</strong> 25–35</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color moderate"></div>
+            <p><strong>Moderate:</strong> 20–24</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low:</strong> 7–19</p>
+          </div>
+        </div>
+      </div>
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz7.js"></script>
+</body>
+</html>

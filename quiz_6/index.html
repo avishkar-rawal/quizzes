@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Path–Goal Leadership Questionnaire</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <link rel="stylesheet" href="quiz6.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Path–Goal Leadership Questionnaire</h1>
+    
+    <div class="intro">
+      <p><strong>Purpose:</strong> The purpose of this questionnaire is to identify your path–goal styles of leadership and examine how your use of each style relates to other styles of leadership.</p>
+      <p><strong>Instructions:</strong> This questionnaire contains questions about different styles of path–goal leadership. Indicate how often each statement is true of your own behavior.</p>
+      <p><strong>Key:</strong> 1 = Never | 2 = Hardly ever | 3 = Seldom | 4 = Occasionally | 5 = Often | 6 = Usually | 7 = Always</p>
+    </div>
+
+    <form id="pathGoalForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit & See Results</button>
+    </form>
+
+    <div class="result" id="results" style="display: none;">
+      <h2>Your Path–Goal Leadership Styles</h2>
+      <div id="scores"></div>
+      
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="radar">Radar Chart</button>
+          <button class="chart-tab" data-chart="pie">Pie Chart</button>
+        </div>
+        
+        <div class="chart-views">
+          <div class="chart-view active" id="radar-view">
+            <h3>Leadership Styles Profile (Radar)</h3>
+            <div class="chart-container">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+          
+          <div class="chart-view" id="pie-view">
+            <h3>Style Proportions (Pie)</h3>
+            <div class="chart-container">
+              <canvas id="pieChart"></canvas> <!-- Renamed from doughnutChart -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="scoring-scale">
+        <h3>Scoring Scale Interpretation</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High Score:</strong> 29 - 35 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color moderate"></div>
+            <p><strong>Moderate Score:</strong> 18 - 28 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low Score:</strong> 5 - 17 points</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz6.js"></script>
+</body>
+</html>
+      <div class="scoring-scale">
+        <h3>Scoring Scale Interpretation</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High Score:</strong> 29 - 35 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color moderate"></div>
+            <p><strong>Moderate Score:</strong> 18 - 28 points</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low Score:</strong> 5 - 17 points</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz6.js"></script>
+</body>
+</html>

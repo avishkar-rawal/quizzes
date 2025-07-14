@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authentic Leadership Self-Assessment</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="quiz9.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Authentic Leadership Self-Assessment</h1>
+    <h2 style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">Chapter 9</h2>
+    <div class="intro">
+      <p><strong>Purpose:</strong> To assess facets of your authentic leadership.</p>
+      <p><strong>Instructions:</strong> This questionnaire contains items about different dimensions of authentic leadership. Please answer honestly.</p>
+      <p><strong>Key:</strong> 1 = Strongly disagree | 2 = Disagree | 3 = Neutral | 4 = Agree | 5 = Strongly agree</p>
+    </div>
+    <form id="leadershipForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+    <div class="result" id="results" style="display: none;">
+      <h2>Your Authentic Leadership Scores</h2>
+      <div id="scores"></div>
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="radar">Radar Chart</button>
+          <button class="chart-tab" data-chart="bar">Bar Chart</button>
+        </div>
+        <div class="chart-views">
+          <div class="chart-view active" id="radar-view">
+            <h3>Authentic Leadership Profile</h3>
+            <div class="chart-container">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-view" id="bar-view">
+            <h3>Dimension Scores Comparison</h3>
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scoring-scale">
+        <h3>Scoring Scale</h3>
+        <div class="scale-container">
+          <div class="scale-item">
+            <div class="scale-color high"></div>
+            <p><strong>High:</strong> 16–20</p>
+          </div>
+          <div class="scale-item">
+            <div class="scale-color low"></div>
+            <p><strong>Low:</strong> 15 and below</p>
+          </div>
+        </div>
+      </div>
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz9.js"></script>
+</body>
+</html>

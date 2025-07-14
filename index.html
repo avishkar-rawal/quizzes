@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2-Page Form with GAS</title>
+  <style>
+    .page { display: none; }
+    .active { display: block; transition: all 0.3s ease-in-out; }
+    body { font-family: Arial, sans-serif; max-width: 400px; margin: auto; padding: 30px; }
+    input { width: 100%; padding: 8px; margin-top: 10px; }
+    button { margin-top: 20px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Page 1: Name -->
+  <div id="page1" class="page active">
+    <h2>Enter Your Name</h2>
+    <input type="text" id="name" name="name" required />
+    <button onclick="submitName()">Next</button>
+  </div>
+
+  <!-- Page 2: Age -->
+  <div id="page2" class="page">
+    <h2>Enter Your Age</h2>
+    <input type="number" id="age" name="age" required />
+    <button onclick="submitAge()">Submit</button>
+  </div>
+
+  <!-- Page 3: Thank You -->
+  <div id="page3" class="page">
+    <h2 id="thankYouMessage"></h2>
+  </div>
+
+  <script>
+    const nameScriptURL = 'https://script.google.com/macros/s/AKfycbyDnnIvydtlDbX71ctCJtXTUd7giI8HukpOk14OxOVgNa4H8EfNuzff72PJiI4-s7x9/exec'; // deployed Web App for name
+    const ageScriptURL = 'https://script.google.com/macros/s/AKfycbzon3G4k7dYjsY9fBEmcVLRnZRd8Hds-f4j5FJsXVrHGJwueWC2aryInJa-Sy0jr9uN/exec';   // deployed Web App for age
+
+    let userName = '';
+
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function submitName() {
+      userName = document.getElementById("name").value.trim();
+      if (!userName) {
+        alert("Please enter your name.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("name", userName);
+
+      fetch(nameScriptURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
+
+      showPage("page2");
+    }
+
+    function submitAge() {
+      const age = document.getElementById("age").value.trim();
+      if (!age) {
+        alert("Please enter your age.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("age", age);
+
+      fetch(ageScriptURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
+
+      document.getElementById("thankYouMessage").innerText = `Thanks ${userName}! Your age was recorded.`;
+      showPage("page3");
+    }
+  </script>
+
+</body>
+</html>

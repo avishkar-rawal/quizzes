@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Styles Quiz - Chapter 10</title>
+    <link rel="stylesheet" href="quiz10.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leadership Styles</h1>
+        <h2>Chapter 10: Servant Leadership</h2>
+
+        <form id="leadershipForm">
+            <div class="intro">
+                <p><strong>Purpose:</strong> The purpose of this questionnaire is to examine the servant leadership behaviors you exhibit.</p>
+                <p><strong>Instructions:</strong> Have a friend, colleague, or classmate read each item carefully and use the following 7-point scale to indicate the extent to which they agree or disagree with the following statements as they pertain to your leadership. In these statements, “the leader” is referring to you in a leadership capacity.</p>
+                <p><strong>Key:</strong> 1 = Strongly disagree | 2 = Disagree | 3 = Disagree somewhat | 4 = Undecided | 5 = Agree somewhat | 6 = Agree | 7 = Strongly agree</p>
+            </div>
+            <div id="questions"></div>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <button type="button" id="randomFillBtn">Random Fill</button>
+                <button type="submit">Calculate Scores</button>
+            </div>
+        </form>
+
+        <div class="result" style="display: none;">
+            <h3>Quiz Results</h3>
+            <p>Here is the breakdown of your servant leadership behaviors based on the responses.</p>
+            <div id="score-breakdown"></div>
+
+            <div class="charts-container">
+                <div class="chart-tabs">
+                    <button class="chart-tab active" data-chart="radar">Radar Chart</button>
+                    <button class="chart-tab" data-chart="bar">Bar Chart</button>
+                </div>                <div class="chart-views">
+                    <div class="chart-view active" id="radar-view">
+                        <div class="chart-container">
+                            <canvas id="resultChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-view" id="bar-view">
+                        <div class="chart-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scoring-scale">
+                <h3>Scoring Scale</h3>
+                <div class="scale-container">
+                    <div class="scale-item">
+                        <div class="scale-color high"></div>
+                        <p><strong>High range:</strong> A score between 23 and 28 means others believe you strongly exhibit this servant leadership behavior.</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color moderate"></div>
+                        <p><strong>Moderate range:</strong> A score between 14 and 22 means others believe you tend to exhibit this behavior in an average way.</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color low"></div>
+                        <p><strong>Low range:</strong> A score between 4 and 13 means others believe you exhibit this leadership behavior below the average or expected degree.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz10.js"></script>
+</body>
+</html>

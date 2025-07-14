@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLII® Situational Leadership Questionnaire</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <link rel="stylesheet" href="quiz5.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>SLII® Situational Leadership Questionnaire</h1>
+    
+    <div class="intro">
+      <p><strong>Purpose:</strong> The purpose of this questionnaire is to explore how different styles of leadership in the situational approach are used depending on the development level of the followers.</p>
+      <p><strong>Instructions:</strong> Look at the following four leadership situations and indicate which SLII® leadership style is needed in each situation provided in the answer options beneath each statement.</p>
+      <p><strong>SLII® Leadership Styles:</strong></p>
+      <div class="style-guide">
+        <div class="style-item">
+          <strong>S1 - Directing:</strong> High Directive, Low Supportive - Tell them what, when, where, and how
+        </div>
+        <div class="style-item">
+          <strong>S2 - Coaching:</strong> High Directive, High Supportive - Direct and support
+        </div>
+        <div class="style-item">
+          <strong>S3 - Supporting:</strong> Low Directive, High Supportive - Listen and encourage
+        </div>
+        <div class="style-item">
+          <strong>S4 - Delegating:</strong> Low Directive, Low Supportive - Turn over responsibility
+        </div>
+      </div>
+    </div>
+
+    <form id="leadershipForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit & Get Results</button>
+    </form>
+
+    <div class="result" id="results" style="display: none;">
+      <h2>Your SLII® Leadership Assessment Results</h2>
+      <div id="scores"></div>
+      
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="style">Style Distribution</button>
+          <button class="chart-tab" data-chart="radar">Leadership Matrix</button>
+          <button class="chart-tab" data-chart="correct">Correct Answers</button>
+        </div>
+        
+        <div class="chart-views">
+          <div class="chart-view active" id="style-view">
+            <h3>Your Leadership Style Distribution</h3>
+            <div class="chart-container">
+              <canvas id="styleChart"></canvas>
+            </div>
+            <div class="style-summary" id="styleSummary"></div>
+          </div>
+          
+          <div class="chart-view" id="radar-view">
+            <h3>SLII® Leadership Matrix</h3>
+            <div class="chart-container">
+              <canvas id="radarChart"></canvas>
+            </div>
+            <div class="matrix-explanation">
+              <p>This chart shows your tendency toward different leadership behaviors based on Directive (task) and Supportive (relationship) dimensions.</p>
+            </div>
+          </div>
+          
+          <div class="chart-view" id="correct-view">
+            <h3>Correct Answers & Analysis</h3>
+            <div id="correctAnswers"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz5.js"></script>
+</body>
+</html>

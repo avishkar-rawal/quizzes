@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transformational Leadership Inventory</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="quiz8.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Transformational Leadership Inventory</h1>
+    <div class="intro">
+      <p><strong>Purpose:</strong> To determine which style of leadership you tend to use, transformational or transactional.</p>
+      <p><strong>Instructions:</strong> Consider a time when you have been a leader of a group. Read each statement and select the response that best describes your leadership behavior.</p>
+      <p><strong>Key:</strong> 1 = Strongly disagree | 2 = Disagree | 3 = Neutral | 4 = Agree | 5 = Strongly agree</p>
+    </div>
+    <form id="leadershipForm">
+      <div id="questions"></div>
+      <button type="button" onclick="calculateScores()">Submit</button>
+    </form>
+    <div class="result" id="results" style="display: none;">
+      <h2>Your Leadership Style Scores</h2>
+      <div id="scores"></div>
+      <div class="charts-container">
+        <div class="chart-tabs">
+          <button class="chart-tab active" data-chart="bar">Bar Chart</button>
+          <button class="chart-tab" data-chart="doughnut">Doughnut Chart</button>
+        </div>
+        <div class="chart-views">
+          <div class="chart-view active" id="bar-view">
+            <h3>Leadership Style Comparison</h3>
+            <div class="chart-container">
+              <canvas id="barChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-view" id="doughnut-view">
+            <h3>Style Proportions</h3>
+            <div class="chart-container">
+              <canvas id="doughnutChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="interpretation"></div>
+    </div>
+  </div>
+  <script src="quiz8.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+# Implementation Plan: Pre-Quiz Data Collection Form
+
+## 1. Objective
+To collect demographic and performance data from users before they take a leadership quiz. This data will be used to analyze how leadership styles correlate with different contexts and outcomes.
+
+## 2. Suggested Questions & Input Types
+- **Demographics:**
+  - Age: Number Input
+  - Gender: Dropdown (Male, Female, Non-binary, Prefer not to say)
+  - Country: Text Input
+- **Organizational Context:**
+  - Industry: Dropdown (Technology, Healthcare, Finance, etc.)
+  - Company Size: Dropdown (1-50, 51-250, etc.)
+  - Your Role/Position: Dropdown (Team Lead, Manager, Director, etc.)
+- **Experience:**
+  - Total Years Working: Number Input
+  - Years as a Lead: Number Input
+- **Team & Performance Metrics (Self-Reported):**
+  - Team Size: Number Input
+  - Team Retention: Dropdown (Low, Average, High)
+  - Project Success Rate: Dropdown (0-25%, 26-50%, etc.)
+
+## 3. Implementation Steps for Each Quiz
+
+### Step A: Modify the HTML File (e.g., `quiz_9/index.html`)
+
+1.  **Placement:** Add a new form section right after the `<h1>` and `<h2>` (Chapter) headings, but *before* the `<div class="intro">`.
+2.  **Structure:**
+    - Create a wrapper `<div>` or `<form>` with an ID like `preQuizForm`.
+    - Add a title, e.g., `<h3>Contextual Information (Optional)</h3>`.
+    - Add a short paragraph explaining the purpose and that the data is anonymous.
+    - For each question, use a `<label>` and the appropriate `<input>` type as suggested above (dropdowns, number inputs, etc.).
+3.  **Buttons:**
+    - Add a primary button: `<button type="button" id="submitPreQuiz">Submit and Start Quiz</button>`.
+    - Add a secondary link/button: `<a href="#" id="skipPreQuiz">Skip to Quiz</a>`.
+4.  **Initial State:** The main quiz form (`<form id="leadershipForm">`) and the results section (`<div class="result">`) should be hidden by default using inline style `style="display: none;"`.
+
+### Step B: Modify the JavaScript File (e.g., `quiz_9/quiz9.js`)
+
+1.  **Global Variable:** Create a global variable at the top of the script to hold the pre-quiz data, e.g., `let preQuizData = {};`.
+2.  **Event Listeners:** Add event listeners for the new buttons. These should be inside the main `DOMContentLoaded` event listener.
+    - **Submit Button (`submitPreQuiz`):**
+      - When clicked, a function should:
+        - Prevent default form submission.
+        - Read the values from all the pre-quiz input fields.
+        - Store these values in the `preQuizData` object.
+        - Hide the pre-quiz form (`document.getElementById('preQuizForm').style.display = 'none';`).
+        - Show the main quiz form (`document.getElementById('leadershipForm').style.display = 'block';`).
+    - **Skip Button (`skipPreQuiz`):**
+      - When clicked, a function should:
+        - Prevent default link behavior.
+        - Hide the pre-quiz form.
+        - Show the main quiz form.
+3.  **Modify `calculateScores()`:**
+    - At the end of this function, after calculating the quiz scores, you will have both the `scores` object and the `preQuizData` object.
+    - This is the point where you would combine them for your final data record. For now, you can simply log them to the console to see that it works: `console.log({ context: preQuizData, results: scores });`.
+
+## 4. Data Quality and Verification
+- Use structured inputs (dropdowns, number inputs with min/max) to minimize errors.
+- Keep the form optional to get higher quality data from willing participants.
+- For later analysis, plan to filter out inconsistent data (e.g., `Years as lead` > `Years working`).

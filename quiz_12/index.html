@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Styles Quiz - Chapter 12</title>
+    <link rel="stylesheet" href="quiz12.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leadership Styles</h1>
+        <h2>Chapter 12: Inclusive Leadership</h2>
+
+        <form id="leadershipForm">
+            <div class="intro">
+                <p><strong>Purpose:</strong> The purpose of this questionnaire is to reflect on your inclusive behaviors and challenge yourself to exhibit inclusive behaviors in your daily interactions.</p>
+                <p><strong>Instructions:</strong> The following instrument is a checklist designed to encourage you to reflect on the inclusive behaviors you exhibit in a variety of settings: meeting one-on-one with individuals, facilitating a team meeting, participating in a team meeting, and mentoring someone less experienced. In each case, you are encouraged to place a check mark in the Yes column or No column.</p>
+            </div>
+
+            <div class="checklist-container">
+                <table class="checklist-table">
+                    <thead>
+                        <tr>
+                            <th class="interaction-type">Types of Interactions</th>
+                            <th class="behavior-description">Inclusive Leadership Behaviors</th>
+                            <th class="response-column">Yes</th>
+                            <th class="response-column">No</th>
+                        </tr>
+                    </thead>
+                    <tbody id="checklist-body">
+                        <!-- Questions will be populated by JavaScript -->
+                    </tbody>
+                </table>
+                <div class="protege-definition">
+                    <p><em><strong>Note:</strong> A protégé is a person who is guided and supported by a mentor; someone who receives guidance from a more experienced person.</em></p>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <button type="button" id="randomSelectBtn" class="secondary-btn">Random Select</button>
+                <button type="submit">Calculate Scores</button>
+            </div>
+        </form>
+
+        <div class="result" style="display: none;">
+            <div class="scoring-interpretation">
+                <h3>Scoring Interpretation</h3>
+                <div class="interpretation-container">
+                    <div class="interpretation-item">
+                        <div class="score-range exemplary"></div>
+                        <p><strong>Score 0-9:</strong> You exemplify many behaviors of inclusive leaders. You may be able to serve as a role model to others and foster inclusive leadership in members of your team and colleagues at work.</p>
+                    </div>
+                    <div class="interpretation-item">
+                        <div class="score-range developing"></div>
+                        <p><strong>Score 10-19:</strong> You are working to become an inclusive leader. You are likely motivated to foster an inclusive organizational environment but have a somewhat limited number of tactics and strategies.</p>
+                    </div>
+                    <div class="interpretation-item">
+                        <div class="score-range emerging"></div>
+                        <p><strong>Score 20-30:</strong> You either previously were not aware of the value of inclusive leadership or were not motivated to adapt a more inclusive approach to leadership.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-header">
+                <h3>Quiz Results</h3>
+                <p>Here is the breakdown of your inclusive leadership behaviors based on your responses.</p>
+            </div>
+
+            <div class="score-summary-card">
+                <div class="overall-score">
+                    <div class="score-circle">
+                        <span id="total-score">0</span>
+                        <small>out of 30</small>
+                    </div>
+                    <div class="score-label" id="score-interpretation">
+                        Your Performance Level
+                    </div>
+                    <div class="score-description">
+                        <p><em>Score represents the number of "No" responses - lower is better</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="score-breakdown"></div>
+
+            <div class="charts-section">
+                <h4>Visual Analysis</h4>
+                <div class="chart-tabs">
+                    <button class="tab-btn active" data-chart="bar">Bar Chart</button>
+                    <button class="tab-btn" data-chart="pie">Pie Chart</button>
+                    <button class="tab-btn" data-chart="radar">Radar Chart</button>
+                </div>
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <canvas id="resultChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz12.js"></script>
+</body>
+</html>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz12.js"></script>
+</body>
+</html>

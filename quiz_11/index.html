@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Styles Quiz - Chapter 11</title>
+    <link rel="stylesheet" href="quiz11.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leadership Styles</h1>
+        <h2>Chapter 11: Adaptive Leadership</h2>
+
+
+        <form id="leadershipForm">
+            <div class="intro">
+                <p><strong>Purpose:</strong> The purpose of this questionnaire is to identify your adaptive leadership strengths and weaknesses.</p>
+                <p><strong>Instructions:</strong> This questionnaire contains items that assess different dimensions of adaptive leadership and will be completed by someone who knows you (coworkers, friends, members of a group you belong to). Have 1 individual fill out the assessment regarding your leadership and indicate the degree to which they agree with each statement.</p>
+                <p><strong>Key:</strong> 1 = Strongly disagree | 2 = Disagree | 3 = Neutral | 4 = Agree | 5 = Strongly agree</p>
+            </div>
+            <div id="questions"></div>
+            <div class="button-container">
+                <button type="button" id="randomFillBtn">Random Fill</button>
+                <button type="submit">Calculate Scores</button>
+            </div>
+        </form>
+
+        <div class="result" style="display: none;">
+            <div class="scoring-scale">
+                <h3>Scoring Scale</h3>
+                <div class="scale-container">
+                    <div class="scale-item">
+                        <div class="scale-color high"></div>
+                        <p><strong>High range:</strong> A score between 21 and 25 means others find you are strongly inclined to exhibit this adaptive leadership behavior.</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color moderately-high"></div>
+                        <p><strong>Moderately high range:</strong> A score between 16 and 20 means others find you moderately exhibit this adaptive leadership behavior.</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color moderate-low"></div>
+                        <p><strong>Moderate low range:</strong> A score between 11 and 15 means others find you at times exhibit this adaptive leadership behavior.</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color low"></div>
+                        <p><strong>Low range:</strong> A score between 5 and 10 means others find you are seldom inclined to exhibit this adaptive leadership behavior.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Quiz Results</h3>
+            <p>Here is the breakdown of your adaptive leadership behaviors based on the responses.</p>
+            <div id="score-breakdown"></div>
+
+            <div class="charts-container">
+                <div class="chart-container">
+                    <canvas id="resultChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz11.js"></script>
+</body>
+</html>

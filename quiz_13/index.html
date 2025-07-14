@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followership Questionnaire - Chapter 13</title>
+    <link rel="stylesheet" href="quiz13.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Leadership Styles</h1>
+        <h2>Chapter 13: Kelley's Followership Questionnaire</h2>
+
+        <form id="followershipForm">
+            <div class="intro">
+                <p><strong>Purpose:</strong> The purpose of this questionnaire is to learn about your style as a follower.</p>
+                <p><strong>Instructions:</strong> Think of a specific leader–follower situation where you were in the role of follower. For each statement, please use the following scale to indicate the extent to which the statement describes you and your behavior in this situation.</p>
+                <p><strong>Key:</strong> 0 = Rarely | 1 = Almost rarely | 2 = Seldom | 3 = Occasionally | 4 = More often than not | 5 = Often | 6 = Almost always</p>
+            </div>
+            <div id="questions"></div>
+            <div class="button-container" style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <button type="button" id="randomFillBtn">Random Fill</button>
+                <button type="submit">Calculate</button>
+            </div>
+        </form>
+
+        <div class="result" style="display: none;">
+            <div class="scoring-scale">
+                <h3>Followership Styles</h3>
+                <div class="scale-container">
+                    <div class="scale-item">
+                        <div class="scale-color exemplary"></div>
+                        <p><strong class="clickable-style" data-style="exemplary">Exemplary:</strong> High independent thinking (above 40) and high active engagement (above 40)</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color alienated"></div>
+                        <p><strong class="clickable-style" data-style="alienated">Alienated:</strong> High independent thinking (above 40) and low active engagement (below 20)</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color conformist"></div>
+                        <p><strong class="clickable-style" data-style="conformist">Conformist:</strong> Low independent thinking (below 20) and high active engagement (above 40)</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color pragmatist"></div>
+                        <p><strong class="clickable-style" data-style="pragmatist">Pragmatist:</strong> Middling independent thinking (20-40) and middling active engagement (20-40)</p>
+                    </div>
+                    <div class="scale-item">
+                        <div class="scale-color passive"></div>
+                        <p><strong class="clickable-style" data-style="passive">Passive:</strong> Low independent thinking (below 20) and low active engagement (below 20)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Your Followership Results</h3>
+            <p>Here is your followership style based on your responses.</p>
+            <div id="score-breakdown"></div>
+
+            <div class="charts-container">
+                <div class="chart-container">
+                    <canvas id="resultChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for style descriptions -->
+    <div id="styleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz13.js"></script>
+</body>
+</html>
